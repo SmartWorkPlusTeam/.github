@@ -76,10 +76,11 @@ const obj = reactive({ key: "value" });
 const arr = ref([]);
 ```
 
-### 7. Computed Values
+### 7. Computed or Watcher Values
 Declare any computed values.
 ```javascript
 const chartStore = computed(() => {});
+watch(value,(newVal,oldVal) +> {});
 ```
 
 ### 8. Functions
