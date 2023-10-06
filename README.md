@@ -44,34 +44,45 @@ Initialize any Pina stores you intend to use.
 const heatStore = heatReportStore();
 ```
 
-### 3. Static Constants, Variables, and 'Let' Declarations
+### 3. Props & Emits
+Declare any props or emits here if needed.
+```javascript
+defineProps({
+  title: String,
+  temp: Number
+})
+
+defineEmits(['inFocus', 'submit'])
+```
+
+### 4. Static Constants, Variables, and 'Let' Declarations
 Declare any static `const`, `var`, or `let` variables.
 ```javascript
 const staticValue = 42;
 let mutableValue = "changeable";
 ```
 
-### 4. Reactive Constants (Primitive Types)
+### 5. Reactive Constants (Primitive Types)
 Declare reactive constants that hold primitive types like numbers and strings.
 ```javascript
 const number = ref(1);
 const text = ref("sample");
 ```
 
-### 5. Reactive Constants (Objects and Arrays)
+### 6. Reactive Constants (Objects and Arrays)
 Declare reactive constants that hold objects or arrays.
 ```javascript
 const obj = reactive({ key: "value" });
 const arr = ref([]);
 ```
 
-### 6. Computed Values
+### 7. Computed Values
 Declare any computed values.
 ```javascript
 const chartStore = computed(() => {});
 ```
 
-### 7. Functions
+### 8. Functions
 Define any functions.
 ```javascript
 const fetchReport = () => {
@@ -79,7 +90,7 @@ const fetchReport = () => {
 };
 ```
 
-### 8. Lifecycle Hooks
+### 9. Lifecycle Hooks
 Finally, implement any Vue lifecycle hooks like `onMounted`.
 ```javascript
 onMounted(() => {
