@@ -32,19 +32,27 @@ Each `.vue` file must be organized in the following manner:
 ## `<script setup>` Tag Structure
 Within the `<script setup>` tag, organize your code in the following order:
 
-### 1. Constant Imports
+### 1. Defining Page Meta
+Implement page meta here.
+```javascript
+definePageMeta({
+  layout: "control",
+});
+```
+
+### 2. Constant Imports
 Import third-party or internal constants at the top.
 ```javascript
 const dayjs = useDayjs();
 ```
 
-### 2. Pinia Stores
+### 3. Pinia Stores
 Initialize any Pina stores you intend to use.
 ```javascript
 const heatStore = heatReportStore();
 ```
 
-### 3. Props & Emits
+### 4. Props & Emits
 Declare any props or emits here if needed.
 ```javascript
 defineProps({
@@ -55,35 +63,35 @@ defineProps({
 defineEmits(['inFocus', 'submit'])
 ```
 
-### 4. Static Constants, Variables, and 'Let' Declarations
+### 5. Static Constants, Variables, and 'Let' Declarations
 Declare any static `const`, `var`, or `let` variables.
 ```javascript
 const staticValue = 42;
 let mutableValue = "changeable";
 ```
 
-### 5. Reactive Constants (Primitive Types)
+### 6. Reactive Constants (Primitive Types)
 Declare reactive constants that hold primitive types like numbers and strings.
 ```javascript
 const number = ref(1);
 const text = ref("sample");
 ```
 
-### 6. Reactive Constants (Objects and Arrays)
+### 7. Reactive Constants (Objects and Arrays)
 Declare reactive constants that hold objects or arrays.
 ```javascript
 const obj = reactive({ key: "value" });
 const arr = ref([]);
 ```
 
-### 7. Computed or Watcher Values
+### 8. Computed or Watcher Values
 Declare any computed values.
 ```javascript
 const chartStore = computed(() => {});
 watch(value,(newVal,oldVal) +> {});
 ```
 
-### 8. Functions
+### 9. Functions
 Define any functions.
 ```javascript
 const fetchReport = () => {
@@ -91,7 +99,7 @@ const fetchReport = () => {
 };
 ```
 
-### 9. Lifecycle Hooks
+### 10. Lifecycle Hooks
 Finally, implement any Vue lifecycle hooks like `onMounted`.
 ```javascript
 onMounted(() => {
